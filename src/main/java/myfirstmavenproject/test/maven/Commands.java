@@ -31,7 +31,6 @@ public class Commands {
       telegramBot.sendMessage(chatID, "hi");
     }
       else if (text.contains("time")) {
-      
       telegramBot.sendMessage(chatID, "time");
     }
   }
