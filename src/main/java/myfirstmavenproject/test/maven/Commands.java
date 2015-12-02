@@ -10,7 +10,8 @@ public class Commands {
   int         Index = 0;
   String      username;
 
-  public Commands(String commandText, int chatID, TelegramBot telegramBot, String username) {
+  public Commands(String commandText, int chatID, TelegramBot telegramBot,
+      String username) {
     text = commandText.toLowerCase();
     this.chatID = chatID;
     this.telegramBot = telegramBot;
@@ -19,8 +20,8 @@ public class Commands {
 
   public void CheckCommands() throws UnirestException {
     if (text.contains("/start")) {
-      String reply = "Hi, this is an example bot\n" + "Your chat_id is " + chatID + "\n" + "Your username is "
-          + username;
+      String reply = "Hi, this is an example bot\n" + "Your chat_id is "
+          + chatID + "\n" + "Your username is " + username;
       telegramBot.sendMessage(chatID, reply);
     } else if (text.contains("/echo")) {
       telegramBot.sendMessage(chatID, "Received " + text);
@@ -29,12 +30,9 @@ public class Commands {
       telegramBot.sendMessage(chatID, param.toUpperCase());
     } else if (text.contains("hi")) {
       telegramBot.sendMessage(chatID, "hi");
-    }
-      else if (text.contains("time")) {
+    } else if (text.contains("time")) {
       telegramBot.sendMessage(chatID, "time");
     }
   }
-
-  
 
 }
